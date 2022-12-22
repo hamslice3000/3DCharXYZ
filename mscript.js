@@ -23,7 +23,7 @@ https://tympanus.net/codrops/2019/10/14/how-to-create-an-interactive-3d-characte
   function init() {
     
     //const MODEL_PATH = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/stacy_lightweight.glb';
-    const MODEL_PATH = './Doge_Stacy_Named_Uncompressed_03.glb';
+    const MODEL_PATH = 'Doge_Stacy_Named_Uncompressed_03.glb';
     //Canvas "c"
     const canvas = document.querySelector('#c');
     const backgroundColor = 0xf1f1f1;
@@ -51,7 +51,7 @@ https://tympanus.net/codrops/2019/10/14/how-to-create-an-interactive-3d-characte
     camera.position.y = -3;
     
     // Load texture
-    let stacy_txt = new THREE.TextureLoader().load('./clr.png');
+    let stacy_txt = new THREE.TextureLoader().load('clr.png');
     stacy_txt.flipY = false;
 
     const stacy_mtl = new THREE.MeshPhongMaterial({
