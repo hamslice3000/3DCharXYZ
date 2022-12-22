@@ -22,7 +22,9 @@ https://tympanus.net/codrops/2019/10/14/how-to-create-an-interactive-3d-characte
 
   function init() {
     
-    const MODEL_PATH = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/stacy_lightweight.glb';
+    //const MODEL_PATH = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/stacy_lightweight.glb';
+    const MODEL_PATH = './Doge_Stacy_Named_Uncompressed_03.glb';
+    //Canvas "c"
     const canvas = document.querySelector('#c');
     const backgroundColor = 0xf1f1f1;
     
@@ -48,7 +50,8 @@ https://tympanus.net/codrops/2019/10/14/how-to-create-an-interactive-3d-characte
     camera.position.x = 0;
     camera.position.y = -3;
     
-    let stacy_txt = new THREE.TextureLoader().load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/stacy.jpg');
+    // Load texture
+    let stacy_txt = new THREE.TextureLoader().load('./clr.png');
     stacy_txt.flipY = false;
 
     const stacy_mtl = new THREE.MeshPhongMaterial({
@@ -74,16 +77,16 @@ https://tympanus.net/codrops/2019/10/14/how-to-create-an-interactive-3d-characte
             o.material = stacy_mtl;
           }
           // Reference the neck and waist bones
-          if (o.isBone && o.name === 'mixamorigNeck') { 
+          if (o.isBone && o.name === 'mixamorig:Neck') { 
             neck = o;
           }
-          if (o.isBone && o.name === 'mixamorigSpine') { 
+          if (o.isBone && o.name === 'mixamorig:Spine') { 
             waist = o;
           }
         });
         
-        model.scale.set(7, 7, 7);
-        model.position.y = -11;
+        model.scale.set(1, 1, 1);
+        model.position.y = -5;
                 
         scene.add(model);
         
